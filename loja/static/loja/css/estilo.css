@@ -1,0 +1,357 @@
+/* Remove margens e espaçamentos padrão de todos os elementos e ajusta o cálculo de largura */
+* {
+    /* Zera a margem externa de todos os elementos */
+    margin: 0;
+    /* Zera o preenchimento interno de todos os elementos */
+    padding: 0;
+    /* Faz com que bordas e paddings não aumentem a largura total das caixas */
+    box-sizing: border-box;
+}
+
+/* Define os estilos gerais do corpo da página */
+body {
+    /* Aplica a cor de fundo Marfim Neutro (#F5EAE6) definida no guia de estilo */
+    background-color: #F5EAE6;
+    /* Define a cor padrão dos textos como Carvão Escuro (#2D262A) para evitar fadiga visual */
+    color: #2D262A;
+    /* Define uma família de fontes modernas e limpas (sem serifa) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Define o espaçamento entre linhas para facilitar a leitura */
+    line-height: 1.5;
+}
+
+/* Cria um container centralizado para alinhar o conteúdo do site */
+.container {
+    /* Define a largura máxima do conteúdo em telas grandes */
+    max-width: 1140px;
+    /* Centraliza o container horizontalmente na tela (0 em cima/baixo, auto nas laterais) */
+    margin: 0 auto;
+    /* Adiciona um respiro interno nas laterais para não colar na borda em telas menores */
+    padding: 0 20px;
+}
+
+/* ================= CABEÇALHO E NAVEGAÇÃO ================= */
+
+/* Estiliza a faixa superior do cabeçalho */
+.cabecalho {
+    /* Adiciona espaçamento interno em cima e embaixo do cabeçalho */
+    padding: 25px 0;
+}
+
+/* Organiza os itens dentro do cabeçalho lado a lado */
+.cabecalho-conteudo {
+    /* Ativa o Flexbox para alinhar logo, menu e busca na mesma linha */
+    display: flex;
+    /* Distribui o espaço entre os elementos (logo na esquerda, menu no centro, busca na direita) */
+    justify-content: space-between;
+    /* Alinha todos os itens verticalmente ao centro */
+    align-items: center;
+    /* Permite que os itens quebrem de linha em telas muito pequenas (responsividade) */
+    flex-wrap: wrap;
+    /* Adiciona um espaço mínimo de 15px entre os elementos caso quebrem linha */
+    gap: 15px;
+}
+
+/* Estiliza o nome da marca "Lyly´s" */
+.logo {
+    /* Define o tamanho grande da fonte para destacar a marca */
+    font-size: 28px;
+    /* Deixa o texto em negrito */
+    font-weight: 700;
+    /* Aplica a cor primária Rosa Framboesa (#B83E70) na marca */
+    color: #B83E70;
+    /* Adiciona um leve espaçamento entre as letras para dar ar editorial */
+    letter-spacing: 1px;
+}
+
+/* Estiliza o menu de links das categorias */
+.menu-navegacao {
+    /* Ativa o Flexbox para alinhar os links lado a lado */
+    display: flex;
+    /* Define um espaçamento de 28px entre cada link do menu */
+    gap: 28px;
+    /* Permite que os links quebrem linha em celulares */
+    flex-wrap: wrap;
+}
+
+/* Estiliza cada link individual dentro do menu */
+.menu-navegacao a {
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
+    /* Define a cor do texto dos links em Carvão Escuro */
+    color: #2D262A;
+    /* Define o tamanho da fonte dos links */
+    font-size: 16px;
+    /* Define um peso médio para a fonte */
+    font-weight: 500;
+    /* Cria uma transição suave de 0.2 segundos para efeitos de passar o mouse */
+    transition: color 0.2s ease;
+}
+
+/* Muda a cor do link quando o usuário passa o mouse por cima */
+.menu-navegacao a:hover {
+    /* Muda a cor para Rosa Framboesa (#B83E70) */
+    color: #B83E70;
+}
+
+/* Estiliza o formulário da barra de pesquisa */
+.barra-pesquisa {
+    /* Ativa o Flexbox para colar o campo de texto e o botão da lupa */
+    display: flex;
+    /* Alinha verticalmente o campo e o botão */
+    align-items: center;
+    /* Define uma borda sutil na cor recomendada pelo guia (#B4A2AB) */
+    border: 1px solid #B4A2AB;
+    /* Arredonda as bordas da barra de pesquisa */
+    border-radius: 20px;
+    /* Adiciona um pequeno preenchimento interno */
+    padding: 4px 12px;
+    /* Define um fundo levemente mais claro que o marfim da página */
+    background-color: #FFF8F5;
+}
+
+/* Estiliza o campo de digitação dentro da barra de pesquisa */
+.barra-pesquisa input {
+    /* Remove a borda padrão do navegador */
+    border: none;
+    /* Deixa o fundo transparente para herdar o fundo do formulário */
+    background: transparent;
+    /* Remove a linha azul de foco padrão ao clicar */
+    outline: none;
+    /* Define a cor do texto digitado */
+    color: #2D262A;
+    /* Define o tamanho da fonte */
+    font-size: 14px;
+    /* Define a largura do campo de busca */
+    width: 140px;
+}
+
+/* Estiliza o botão da lupa */
+.barra-pesquisa button {
+    /* Remove a borda padrão do botão */
+    border: none;
+    /* Deixa o fundo do botão transparente */
+    background: transparent;
+    /* Transforma o cursor do mouse em "mãozinha" ao passar por cima */
+    cursor: pointer;
+    /* Ajusta o tamanho do ícone da lupa */
+    font-size: 14px;
+}
+
+/* ================= BANNER PRINCIPAL (HERO) ================= */
+
+/* Estiliza a caixa do banner principal */
+.banner-hero {
+    /* Define uma altura fixa de 420px para o banner */
+    height: 420px;
+    /* Aplica um degradê claro à esquerda (para dar leitura ao texto) sobre uma foto de moda */
+    background-image: linear-gradient(to right, rgba(245, 234, 230, 0.92) 35%, rgba(245, 234, 230, 0.1) 70%), 
+                      url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80');
+    /* Faz a imagem cobrir toda a área do banner sem distorcer */
+    background-size: cover;
+    /* Centraliza o foco da imagem */
+    background-position: center right;
+    /* Ativa o Flexbox para centralizar o bloco de texto verticalmente */
+    display: flex;
+    /* Alinha o conteúdo ao centro na vertical */
+    align-items: center;
+    /* Adiciona espaçamento interno nas laterais do banner */
+    padding: 0 50px;
+    /* Adiciona margem inferior para separar o banner da vitrine de produtos */
+    margin-bottom: 45px;
+}
+
+/* Estiliza o título principal dentro do banner */
+.banner-texto h2 {
+    /* Define o tamanho grande e marcante do título */
+    font-size: 32px;
+    /* Define o peso negrito da fonte */
+    font-weight: 700;
+    /* Aplica a cor de títulos fortes (#473B43) do guia de estilo */
+    color: #473B43;
+    /* Ajusta o espaçamento entre as duas linhas do título */
+    line-height: 1.2;
+    /* Adiciona espaço abaixo do título */
+    margin-bottom: 12px;
+}
+
+/* Estiliza o subtítulo do banner */
+.banner-texto p {
+    /* Define o tamanho da fonte do subtítulo */
+    font-size: 18px;
+    /* Define a cor do texto regular */
+    color: #2D262A;
+    /* Adiciona espaço abaixo do parágrafo antes do botão */
+    margin-bottom: 24px;
+}
+
+/* Estiliza o botão principal "VER NOVA COLEÇÃO" */
+.botao-primario {
+    /* Faz o link se comportar como um bloco para aceitar padding */
+    display: inline-block;
+    /* Aplica a cor primária Rosa Framboesa (#B83E70) no fundo do botão */
+    background-color: #B83E70;
+    /* Define a cor do texto como branco para garantir contraste WCAG aprovado */
+    color: #FFFFFF;
+    /* Remove o sublinhado do link */
+    text-decoration: none;
+    /* Define o tamanho e peso da fonte do botão */
+    font-size: 14px;
+    font-weight: 600;
+    /* Adiciona espaçamento interno para formar o botão retangular */
+    padding: 14px 32px;
+    /* Arredonda levemente os cantos do botão */
+    border-radius: 6px;
+    /* Adiciona transição suave para o efeito hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão "VER NOVA COLEÇÃO" */
+.botao-primario:hover {
+    /* Escurece levemente o rosa framboesa ao passar o mouse */
+    background-color: #962f5a;
+}
+
+/* ================= SEÇÃO DE PRODUTOS EM DESTAQUE ================= */
+
+/* Estiliza a seção que engloba os produtos */
+.secao-produtos {
+    /* Adiciona espaçamento na parte inferior da página */
+    padding-bottom: 60px;
+}
+
+/* Estiliza o título "PRODUTOS EM DESTAQUE" */
+.titulo-secao {
+    /* Define o tamanho da fonte do título da seção */
+    font-size: 20px;
+    /* Deixa o título em negrito */
+    font-weight: 700;
+    /* Aplica a cor de títulos fortes (#473B43) */
+    color: #473B43;
+    /* Adiciona espaço abaixo do título antes dos cartões */
+    margin-bottom: 20px;
+}
+
+/* Configura a grade que exibe os 4 produtos lado a lado */
+.grade-produtos {
+    /* Ativa o CSS Grid para criar colunas organizadas */
+    display: grid;
+    /* Cria 4 colunas iguais em telas grandes (e adapta automaticamente em telas menores) */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    /* Define um espaçamento de 24px entre cada cartão de produto */
+    gap: 24px;
+}
+
+/* Estiliza cada cartão individual de produto */
+.card-produto {
+    /* Organiza o conteúdo do cartão em coluna (imagem, nome, preço, botão) */
+    display: flex;
+    /* Define a direção vertical dos itens */
+    flex-direction: column;
+}
+
+/* Estiliza a caixa cinza clara que segura a foto do produto */
+.card-imagem-box {
+    /* Define posição relativa para que a tag "NOVO" fique presa dentro desta caixa */
+    position: relative;
+    /* Define uma cor de fundo neutra para destacar as fotos das roupas */
+    background-color: #E6E1DF;
+    /* Arredonda os cantos da caixa da foto */
+    border-radius: 8px;
+    /* Esconde qualquer parte da imagem que ultrapasse os cantos arredondados */
+    overflow: hidden;
+    /* Define uma altura fixa para todas as fotos ficarem alinhadas */
+    height: 290px;
+    /* Adiciona espaço abaixo da foto */
+    margin-bottom: 12px;
+}
+
+/* Estiliza a tag laranja "NOVO" no canto superior esquerdo da foto */
+.tag-novo {
+    /* Posiciona a etiqueta de forma absoluta dentro da caixa da imagem */
+    position: absolute;
+    /* Afasta 12px do topo */
+    top: 12px;
+    /* Afasta 12px da esquerda */
+    left: 12px;
+    /* Aplica a cor secundária Laranja Terracota (#B6531E) conforme o guia */
+    background-color: #B6531E;
+    /* Define o texto branco para alto contraste */
+    color: #FFFFFF;
+    /* Define fonte pequena e em negrito */
+    font-size: 11px;
+    font-weight: 700;
+    /* Adiciona preenchimento interno na etiqueta */
+    padding: 4px 12px;
+    /* Arredonda os cantos da etiqueta */
+    border-radius: 4px;
+    /* Garante que a etiqueta fique sempre por cima da foto */
+    z-index: 1;
+}
+
+/* Estiliza a imagem dentro do cartão */
+.card-imagem-box img {
+    /* Faz a imagem ocupar 100% da largura da caixa */
+    width: 100%;
+    /* Faz a imagem ocupar 100% da altura da caixa */
+    height: 100%;
+    /* Corta as sobras da imagem proporcionalmente sem achatar a modelo */
+    object-fit: cover;
+    /* Centraliza o enquadramento no topo (para não cortar a cabeça da modelo) */
+    object-position: top center;
+}
+
+/* Estiliza o nome da peça de roupa */
+.produto-nome {
+    /* Define o tamanho da fonte do nome do produto */
+    font-size: 15px;
+    /* Define peso regular/médio */
+    font-weight: 500;
+    /* Aplica a cor Carvão Escuro (#2D262A) */
+    color: #2D262A;
+    /* Adiciona pequeno espaço abaixo do nome */
+    margin-bottom: 2px;
+}
+
+/* Estiliza o preço do produto */
+.produto-preco {
+    /* Define o tamanho da fonte do preço */
+    font-size: 15px;
+    /* Deixa o preço em negrito para criar hierarquia visual */
+    font-weight: 700;
+    /* Aplica a cor de texto forte (#473B43) */
+    color: #473B43;
+    /* Adiciona espaço abaixo do preço antes do botão */
+    margin-bottom: 12px;
+}
+
+/* Estiliza o botão "ADICIONAR À SACOLA" em formato de pílula */
+.botao-sacola {
+    /* Faz o botão ocupar toda a largura do cartão */
+    width: 100%;
+    /* Aplica a cor primária Rosa Framboesa (#B83E70) */
+    background-color: #B83E70;
+    /* Define o texto branco para legibilidade */
+    color: #FFFFFF;
+    /* Remove a borda padrão de botões HTML */
+    border: none;
+    /* Arredonda totalmente as laterais criando o formato de pílula da imagem */
+    border-radius: 25px;
+    /* Define altura e espaçamento interno do botão */
+    padding: 10px 16px;
+    /* Define o tamanho e peso da letra */
+    font-size: 12px;
+    font-weight: 600;
+    /* Adiciona leve espaçamento entre letras */
+    letter-spacing: 0.5px;
+    /* Mostra o cursor de clique */
+    cursor: pointer;
+    /* Cria transição suave para o hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão "ADICIONAR À SACOLA" */
+.botao-sacola:hover {
+    /* Escurece o tom de rosa framboesa indicando interatividade */
+    background-color: #962f5a;
+}

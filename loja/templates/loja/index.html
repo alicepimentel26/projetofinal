@@ -1,0 +1,166 @@
+<!-- Carrega a biblioteca de arquivos estáticos do Django (necessário para ler o CSS e imagens) -->
+{% load static %}
+<!-- Define que este documento segue o padrão HTML5 -->
+<!DOCTYPE html>
+<!-- Inicia a estrutura da página e define o idioma principal como Português do Brasil -->
+<html lang="pt-br">
+<!-- Inicia a seção de configurações e metadados invisíveis ao usuário -->
+<head>
+    <!-- Define a codificação de caracteres para UTF-8 (permite acentos e cedilha) -->
+    <meta charset="UTF-8">
+    <!-- Configura a escala da página para funcionar corretamente em celulares e telas menores -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define o título que aparece na aba do navegador -->
+    <title>Lyly´s - Moda Feminina</title>
+    <!-- Conecta este arquivo HTML ao arquivo de estilos CSS usando o caminho estático do Django -->
+    <link rel="stylesheet" href="{% static 'loja/css/estilo.css' %}">
+<!-- Fecha a seção de metadados -->
+</head>
+<!-- Inicia o corpo visível da página -->
+<body>
+    <!-- Inicia o cabeçalho superior do site -->
+    <header class="cabecalho">
+        <!-- Container interno para alinhar e limitar a largura dos elementos do cabeçalho -->
+        <div class="container cabecalho-conteudo">
+            <!-- Título principal com o nome da marca (atua como logotipo textual) -->
+            <h1 class="logo">Lyly´s</h1>
+            <!-- Inicia a barra de navegação principal com as categorias da imagem -->
+            <nav class="menu-navegacao">
+                <!-- Link para a categoria Novidades -->
+                <a href="#">Novidades</a>
+                <!-- Link para a categoria Vestidos -->
+                <a href="#">Vestidos</a>
+                <!-- Link para a categoria Blusas -->
+                <a href="#">Blusas</a>
+                <!-- Link para a categoria Calças -->
+                <a href="#">Calças</a>
+                <!-- Link para a categoria Acessórios -->
+                <a href="#">Acessórios</a>
+                <!-- Link para a categoria de promoções (Sale) -->
+                <a href="#">Sale</a>
+            <!-- Fecha a barra de navegação -->
+            </nav>
+            <!-- Formulário de busca corrigido (mantido do seu código original e estilizado) -->
+            <form action="#" method="get" class="barra-pesquisa">
+                <!-- Campo de texto para digitar a pesquisa -->
+                <input type="search" name="pesquisa" id="pesquisa" placeholder="Buscar peças...">
+                <!-- Botão de envio da pesquisa com ícone de lupa -->
+                <button type="submit" aria-label="Pesquisar">🔎</button>
+            <!-- Fecha o formulário de pesquisa -->
+            </form>
+        <!-- Fecha o container interno do cabeçalho -->
+        </div>
+    <!-- Fecha o cabeçalho superior -->
+    </header>
+
+    <!-- Inicia o conteúdo principal da página -->
+    <main class="container">
+        <!-- Seção do banner principal (Hero) com imagem de fundo -->
+        <section class="banner-hero">
+            <!-- Bloco de texto posicionado à esquerda do banner -->
+            <div class="banner-texto">
+                <!-- Título de impacto da coleção conforme a imagem -->
+                <h2>ESTILO E CONFORTO<br>PARA TODOS OS DIAS.</h2>
+                <!-- Subtítulo convidativo abaixo do título principal -->
+                <p>Descubra nossa nova coleção.</p>
+                <!-- Botão principal de ação (Call to Action) em rosa framboesa -->
+                <a href="#destaques" class="botao-primario">VER NOVA COLEÇÃO</a>
+            <!-- Fecha o bloco de texto do banner -->
+            </div>
+        <!-- Fecha a seção do banner principal -->
+        </section>
+
+        <!-- Seção da vitrine de produtos em destaque -->
+        <section id="destaques" class="secao-produtos">
+            <!-- Título da seção de produtos -->
+            <h3 class="titulo-secao">PRODUTOS EM DESTAQUE</h3>
+            
+            <!-- Grade que organiza os 4 cartões de produtos lado a lado -->
+            <div class="grade-produtos">
+                
+                <!-- Inicia o Cartão do Produto 1 -->
+                <article class="card-produto">
+                    <!-- Caixa da imagem com posição relativa para prender a etiqueta "NOVO" -->
+                    <div class="card-imagem-box">
+                        <!-- Etiqueta laranja terracota indicando novidade -->
+                        <span class="tag-novo">NOVO</span>
+                        <!-- Imagem do produto (substitua o src pelo caminho real da sua foto) -->
+                        <img src="{% static 'loja/img/vestidopretocurto.png' %}" alt="Vestido Preto">
+                    <!-- Fecha a caixa da imagem -->
+                    </div>
+                    <!-- Nome do produto -->
+                    <h4 class="produto-nome">Vestido Curto Preto</h4>
+                    <!-- Preço do produto -->
+                    <p class="produto-preco">R$ 139,00</p>
+                    <!-- Botão de compra em formato de pílula na cor rosa framboesa -->
+                    <button type="button" class="botao-sacola">ADICIONAR À SACOLA</button>
+                <!-- Fecha o Cartão do Produto 1 -->
+                </article>
+
+                <!-- Inicia o Cartão do Produto 2 -->
+                <article class="card-produto">
+                    <!-- Caixa da imagem -->
+                    <div class="card-imagem-box">
+                        <!-- Etiqueta de novidade -->
+                        <span class="tag-novo">NOVO</span>
+                        <!-- Imagem do produto 2 -->
+                        <img src="" alt="Vestido Estampado">
+                    <!-- Fecha a caixa da imagem -->
+                    </div>
+                    <!-- Nome do produto 2 -->
+                    <h4 class="produto-nome">Vestido Boho Terracota</h4>
+                    <!-- Preço do produto 2 -->
+                    <p class="produto-preco">R$ 129,00</p>
+                    <!-- Botão de compra -->
+                    <button type="button" class="botao-sacola">ADICIONAR À SACOLA</button>
+                <!-- Fecha o Cartão do Produto 2 -->
+                </article>
+
+                <!-- Inicia o Cartão do Produto 3 -->
+                <article class="card-produto">
+                    <!-- Caixa da imagem -->
+                    <div class="card-imagem-box">
+                        <!-- Etiqueta de novidade -->
+                        <span class="tag-novo">NOVO</span>
+                        <!-- Imagem do produto 3 -->
+                        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=400&q=80" alt="Vestido Preto">
+                    <!-- Fecha a caixa da imagem -->
+                    </div>
+                    <!-- Nome do produto 3 -->
+                    <h4 class="produto-nome">Vestido Curto Clássico</h4>
+                    <!-- Preço do produto 3 -->
+                    <p class="produto-preco">R$ 125,00</p>
+                    <!-- Botão de compra -->
+                    <button type="button" class="botao-sacola">ADICIONAR À SACOLA</button>
+                <!-- Fecha o Cartão do Produto 3 -->
+                </article>
+
+                <!-- Inicia o Cartão do Produto 4 -->
+                <article class="card-produto">
+                    <!-- Caixa da imagem -->
+                    <div class="card-imagem-box">
+                        <!-- Etiqueta de novidade -->
+                        <span class="tag-novo">NOVO</span>
+                        <!-- Imagem do produto 4 -->
+                        <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=400&q=80" alt="Blusa Terracota">
+                    <!-- Fecha a caixa da imagem -->
+                    </div>
+                    <!-- Nome do produto 4 -->
+                    <h4 class="produto-nome">Blusa Canelada Terracota</h4>
+                    <!-- Preço do produto 4 -->
+                    <p class="produto-preco">R$ 85,00</p>
+                    <!-- Botão de compra -->
+                    <button type="button" class="botao-sacola">ADICIONAR À SACOLA</button>
+                <!-- Fecha o Cartão do Produto 4 -->
+                </article>
+
+            <!-- Fecha a grade de produtos -->
+            </div>
+        <!-- Fecha a seção de produtos em destaque -->
+        </section>
+    <!-- Fecha o conteúdo principal -->
+    </main>
+<!-- Fecha o corpo da página -->
+</body>
+<!-- Finaliza o documento HTML -->
+</html>
